@@ -14,43 +14,55 @@
         <div class="container">
             <div class="logo">
                 <img src="assets/images/logo.png" alt="Logo MTs Darul Ulum">
-                <h1>MTs Darul Ulum</h1>
-                <p>Cimahpar Kota Bogor</p>
+                <div class="logo-text">
+                    <h1>MTs Darul Ulum</h1>
+                    <p>Cimahpar Kota Bogor</p>
+                </div>
             </div>
             <nav class="main-nav">
-                <ul>
+                <ul id="nav-menu">
                     <li><a href="#beranda">Beranda</a></li>
                     <li><a href="#tentang-kami">Tentang Kami</a></li>
                     <li><a href="#berita">Berita</a></li>
+                    <li><a href="#galeri">Galeri</a></li>
                     <li><a href="#kontak">Kontak</a></li>
                 </ul>
             </nav>
+            <div class="nav-toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
     </header>
 
     <section id="beranda" class="hero">
+        <div class="hero-overlay"></div>
         <div class="container">
-            <h2>Selamat Datang di MTs Darul Ulum</h2>
-            <p>Membentuk generasi berakhlak mulia, cerdas, dan mandiri.</p>
-            <a href="#berita" class="cta-button">Lihat Berita Terbaru</a>
+            <h2>Selamat Datang di</h2>
+            <h1>MTs Darul Ulum Cimahpar</h1>
+            <p class="tagline">Membentuk Generasi Unggul, Berakhlak Mulia, dan Penuh Prestasi.</p>
+            <a href="#tentang-kami" class="cta-button">Jelajahi Lebih Lanjut <i class="fas fa-arrow-right"></i></a>
         </div>
     </section>
 
     <section id="tentang-kami" class="tentang-kami">
         <div class="container">
-            <h2>Tentang Kami</h2>
+            <h2 class="section-title">Tentang MTs Darul Ulum</h2>
+            <p class="section-subtitle">Sekolah kami adalah tempat di mana ilmu dan iman bersatu.</p>
             <div class="card-grid">
                 <div class="card">
-                    <h3>Visi</h3>
-                    <p>Mewujudkan siswa yang unggul dalam ilmu pengetahuan dan teknologi, berlandaskan iman dan taqwa.</p>
+                    <i class="fas fa-eye fa-3x icon-green"></i>
+                    <h3>Visi Kami</h3>
+                    <p>Menjadi lembaga pendidikan Islam unggulan yang melahirkan lulusan berkarakter Islami, cerdas, dan siap menghadapi tantangan global.</p>
                 </div>
                 <div class="card">
-                    <h3>Misi</h3>
-                    <p>Menyelenggarakan pendidikan yang berkualitas, mengembangkan potensi siswa, dan menanamkan nilai-nilai keagamaan.</p>
+                    <i class="fas fa-bullseye fa-3x icon-green"></i>
+                    <h3>Misi Kami</h3>
+                    <p>Menyelenggarakan pendidikan yang memadukan kurikulum nasional dan nilai-nilai Islam, serta membina akhlak mulia dan potensi siswa.</p>
                 </div>
                 <div class="card">
-                    <h3>Sejarah</h3>
-                    <p>Didirikan pada tahun 2025, MTs Darul Ulum telah berkomitmen untuk memberikan pendidikan terbaik bagi masyarakat Cimahpar dan sekitarnya.</p>
+                    <i class="fas fa-history fa-3x icon-green"></i>
+                    <h3>Sejarah Singkat</h3>
+                    <p>Didirikan pada tahun [Tahun], MTs Darul Ulum Cimahpar berkomitmen untuk memberikan pendidikan berkualitas dengan fondasi keagamaan yang kuat.</p>
                 </div>
             </div>
         </div>
@@ -58,51 +70,80 @@
 
     <section id="berita" class="berita">
         <div class="container">
-            <h2>Berita Terbaru</h2>
+            <h2 class="section-title">Berita & Kegiatan Terbaru</h2>
             <div class="berita-list">
                 <div class="berita-item">
-                    <img src="assets/images/berita1.jpg" alt="Kegiatan Sekolah 1">
-                    <h3>Gebyar Lomba HUT RI Ke-80</h3>
-                    <p>Pengurus OSIM MTs Darul Ulum mengadakan berbagai lomba untuk memeriahkan hari ulang tahun Republik Indonesia.</p>
+                    <img src="assets/images/berita1.jpg" alt="Gebyar Lomba HUT RI">
+                    <div class="berita-content">
+                        <h3>Gebyar Lomba HUT RI Ke-76</h3>
+                        <p>Memeriahkan Hari Kemerdekaan dengan berbagai perlombaan seru dan edukatif...</p>
+                        <a href="#">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
                 <div class="berita-item">
-                    <img src="assets/images/berita2.jpg" alt="Kegiatan Sekolah 2">
-                    <h3>Pengajian Tahunan</h3>
-                    <p>Acara pengajian tahunan dalam rangka memperingati Tahun Baru Islam 1447 H.</p>
+                    <img src="assets/images/berita2.jpg" alt="Pengajian Virtual">
+                    <div class="berita-content">
+                        <h3>Pengajian Virtual Menyambut Tahun Baru Islam</h3>
+                        <p>Mengisi pergantian tahun dengan pengajian online bersama para ustadz dan siswa...</p>
+                        <a href="#">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
                 <div class="berita-item">
-                    <img src="assets/images/berita3.jpg" alt="Kegiatan Sekolah 3">
-                    <h3>Pengumuman Kelulusan 2025</h3>
-                    <p>Pengumuman hasil kelulusan siswa MTs Darul Ulum untuk tahun ajaran 2025.</p>
+                    <img src="assets/images/berita3.jpg" alt="Pengumuman Kelulusan">
+                    <div class="berita-content">
+                        <h3>Pengumuman Kelulusan Angkatan Tahun 2021</h3>
+                        <p>Informasi penting seputar pengumuman kelulusan siswa-siswi kelas IX...</p>
+                        <a href="#">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeri" class="galeri">
+        <div class="container">
+            <h2 class="section-title">Galeri Foto Kegiatan</h2>
+            <div class="galeri-grid">
+                <img src="assets/images/galeri1.jpg" alt="Galeri 1" class="galeri-item">
+                <img src="assets/images/galeri2.jpg" alt="Galeri 2" class="galeri-item">
+                <img src="assets/images/galeri3.jpg" alt="Galeri 3" class="galeri-item">
+                <img src="assets/images/galeri4.jpg" alt="Galeri 4" class="galeri-item">
             </div>
         </div>
     </section>
 
     <section id="kontak" class="kontak">
         <div class="container">
-            <h2>Kontak Kami</h2>
-            <p>Hubungi kami untuk informasi lebih lanjut.</p>
-            <div class="kontak-info">
-                <p><i class="fas fa-map-marker-alt"></i> Jl. Raya Pembangunan No.123, Cimahpar, Kota Bogor</p>
-                <p><i class="fas fa-phone"></i> 0251-12345678</p>
-                <p><i class="fas fa-envelope"></i> mtsdarululumcimahpar@gmail.com</p>
+            <h2 class="section-title">Kontak Kami</h2>
+            <div class="kontak-info-grid">
+                <div class="kontak-card">
+                    <h3>Admin & Informasi</h3>
+                    <p><i class="fas fa-user-circle"></i> Sdr. Ali (Admin Sekolah)</p>
+                    <p><i class="fas fa-phone-alt"></i> +62 812-3456-7890</p>
+                    <p><i class="fas fa-envelope"></i> admin@mtsdarululum.sch.id</p>
+                </div>
+                <div class="kontak-card">
+                    <h3>Lokasi Sekolah</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Jl. Raya Pembangunan No.123, Cimahpar, Kec. Bogor Utara, Kota Bogor, Jawa Barat 16155</p>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.120531644781!2d106.82270921477028!3d-6.529883995277839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c5e305e55e09%3A0x6b10620f4c3c3a90!2sMTs%20Darul%20Ulum%20Cimahpar!5e0!3m2!1sen!2sid!4v1628859660233!5m2!1sen!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
             </div>
             <div class="sosial-media">
-                <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </section>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 MTs Darul Ulum. Hak Cipta Dilindungi.</p>
+            <p>© 2024 MTs Darul Ulum. Semua Hak Cipta Dilindungi.</p>
         </div>
     </footer>
 
     <script src="assets/js/script.js"></script>
-
 </body>
 </html>
