@@ -1,25 +1,31 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scrolling untuk navigasi
-    const navLinks = document.querySelectorAll('.main-nav a[href^="#"]');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            document.querySelector(targetId).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    // Toggle menu mobile
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
     });
 
-    // Fitur toggle menu untuk versi mobile (jika diperlukan)
-    // Anda bisa menambahkan tombol hamburger di HTML dan logika di sini
-    // untuk menampilkan/menyembunyikan menu.
-    // Contoh sederhana:
-    const navMenu = document.querySelector('.main-nav ul');
-    const toggleButton = document.createElement('button');
-    toggleButton.textContent = '☰';
-    toggleButton.classList.add('nav-toggle');
+    // Smooth scrolling untuk navigasi
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
 
-    // Jika Anda ingin menambahkan tombol toggle, letakkan di HTML
-    // dan gunakan selector yang tepat di sini.
+            if (targetElement) {
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                window.scrollTo({
+                    top: targetElement.offsetTop - headerHeight,
+                    behavior: 'smooth'
+                });
+            }
+
+            // Menutup menu mobile setelah klik
+            if (window.innerWidth <= 768) {
+                navMenu.classList.remove('active');
+            }
+        });
+    });
 });
