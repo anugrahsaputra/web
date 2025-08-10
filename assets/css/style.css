@@ -1,24 +1,60 @@
-/* Gaya Umum */
-body {
-    font-family: 'Poppins', sans-serif;
+/* -- General Styles -- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-green: #2e8b57;
+    --dark-green: #006400;
+    --light-green: #f0fdf4;
+    --grey-text: #4a4a4a;
+    --white: #ffffff;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+* {
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
-    color: #333;
-    line-height: 1.6;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    background-color: #f7f7f7;
+    color: var(--grey-text);
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 2rem;
 }
 
-/* Header */
+.section-title {
+    font-size: 2.5rem;
+    color: var(--dark-green);
+    text-align: center;
+    margin-bottom: 1rem;
+    position: relative;
+    font-weight: 700;
+}
+
+.section-subtitle {
+    text-align: center;
+    margin-bottom: 4rem;
+    color: var(--grey-text);
+    font-size: 1.1rem;
+}
+
+/* -- Header -- */
 .header {
-    background-color: #ffffff;
+    background-color: var(--white);
     padding: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: var(--box-shadow);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -30,180 +66,181 @@ body {
     align-items: center;
 }
 
-.header .logo {
+.logo {
     display: flex;
     align-items: center;
 }
 
-.header .logo img {
+.logo img {
     height: 50px;
     margin-right: 15px;
 }
 
-.header h1 {
-    margin: 0;
+.logo-text h1 {
     font-size: 1.5rem;
-    color: #2e8b57;
+    color: var(--dark-green);
     font-weight: 700;
 }
 
-.header p {
-    margin: 0;
+.logo-text p {
     font-size: 0.9rem;
-    color: #6c757d;
-}
-
-.main-nav {
-    display: flex;
-    align-items: center;
+    color: var(--grey-text);
+    margin-top: -5px;
 }
 
 .main-nav ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
 }
 
 .main-nav ul li a {
     text-decoration: none;
-    color: #495057;
+    color: var(--grey-text);
     padding: 0.5rem 1rem;
     font-weight: 600;
     transition: color 0.3s;
-}
-
-.main-nav ul li a:hover {
-    color: #28a745;
-}
-
-/* Hero Section */
-.hero {
-    background-color: #006400; /* Hijau Gelap */
-    color: #fff;
-    text-align: center;
-    padding: 100px 20px;
     position: relative;
-    overflow: hidden;
 }
 
-.hero::before {
+.main-nav ul li a::after {
     content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-green);
+    transition: transform 0.3s ease;
+}
+
+.main-nav ul li a:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.nav-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--dark-green);
+}
+
+/* -- Hero Section -- */
+.hero {
+    background: url('assets/images/hero-bg.jpg') no-repeat center center/cover;
+    position: relative;
+    color: var(--white);
+    text-align: center;
+    padding: 150px 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.3);
+    background-color: rgba(0, 100, 0, 0.7); /* Dark green overlay */
 }
 
-.hero .container {
-    position: relative;
-    z-index: 1;
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
 }
 
 .hero h2 {
-    font-size: 3rem;
-    margin: 0 0 10px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
 }
 
-.hero p {
+.tagline {
     font-size: 1.2rem;
-    margin: 0 0 30px;
+    margin-bottom: 2rem;
 }
 
 .cta-button {
-    background-color: #28a745;
-    color: #fff;
+    display: inline-block;
+    background-color: var(--primary-green);
+    color: var(--white);
     text-decoration: none;
     padding: 15px 30px;
     border-radius: 50px;
-    font-weight: bold;
+    font-weight: 600;
     transition: background-color 0.3s, transform 0.3s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .cta-button:hover {
-    background-color: #218838;
-    transform: translateY(-2px);
+    background-color: #2e7a4a;
+    transform: translateY(-3px);
 }
 
-/* Tentang Kami & Berita Section */
-.tentang-kami, .berita, .kontak {
-    padding: 80px 0;
-}
-
+/* -- Tentang Kami Section -- */
 .tentang-kami {
-    background-color: #e8f5e9;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    color: #006400;
-    text-align: center;
-    margin-bottom: 50px;
-    position: relative;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background-color: #2e8b57;
-    border-radius: 2px;
+    padding: 8rem 0;
+    background-color: var(--light-green);
 }
 
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 2rem;
 }
 
 .card {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: var(--white);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
     text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .card h3 {
-    color: #2e8b57;
-    font-size: 1.5rem;
-    margin-top: 0;
+    color: var(--primary-green);
+    margin-top: 1rem;
+    font-size: 1.4rem;
 }
 
+.card p {
+    color: var(--grey-text);
+}
+
+.icon-green {
+    color: var(--primary-green);
+}
+
+/* -- Berita Section -- */
 .berita {
-    background-color: #fff;
+    padding: 8rem 0;
+    background-color: var(--white);
 }
 
 .berita-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
+    gap: 2rem;
 }
 
 .berita-item {
-    background-color: #f1f8e9;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: var(--box-shadow);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .berita-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .berita-item img {
@@ -212,91 +249,170 @@ body {
     object-fit: cover;
 }
 
-.berita-item h3 {
-    padding: 15px 20px 0;
-    color: #2e8b57;
+.berita-content {
+    padding: 1.5rem;
+}
+
+.berita-content h3 {
+    color: var(--primary-green);
     font-size: 1.25rem;
-    margin: 0;
+    margin-bottom: 0.5rem;
 }
 
-.berita-item p {
-    padding: 0 20px 20px;
+.berita-content p {
     font-size: 1rem;
-    color: #555;
 }
 
-/* Kontak Section */
+.berita-content a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* -- Galeri Section -- */
+.galeri {
+    padding: 8rem 0;
+    background-color: var(--light-green);
+}
+
+.galeri-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.galeri-item {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s;
+}
+
+.galeri-item:hover {
+    transform: scale(1.05);
+}
+
+/* -- Kontak Section -- */
 .kontak {
-    background-color: #006400; /* Hijau Gelap */
-    color: #fff;
+    padding: 8rem 0;
+    background-color: var(--dark-green);
+    color: var(--white);
     text-align: center;
 }
 
-.kontak h2 {
-    color: #fff;
+.kontak h2.section-title {
+    color: var(--white);
 }
 
-.kontak-info p {
-    font-size: 1.1rem;
+.kontak-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.kontak-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+}
+
+.kontak-card h3 {
+    color: var(--white);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.kontak-card p {
+    color: rgba(255, 255, 255, 0.9);
     margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.kontak-info p i {
-    color: #28a745;
+.kontak-card p i {
     margin-right: 10px;
-    width: 25px;
-    text-align: center;
+    color: var(--primary-green);
+}
+
+.map-container {
+    margin-top: 2rem;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+}
+
+.sosial-media {
+    margin-top: 4rem;
 }
 
 .sosial-media a {
-    color: #fff;
+    color: var(--white);
     font-size: 2rem;
     margin: 0 15px;
-    transition: transform 0.3s, color 0.3s;
+    transition: color 0.3s, transform 0.3s;
 }
 
 .sosial-media a:hover {
-    color: #28a745;
+    color: var(--primary-green);
     transform: scale(1.1);
 }
 
-/* Footer */
+/* -- Footer -- */
 .footer {
-    background-color: #004d00; /* Hijau Lebih Gelap */
-    color: #fff;
+    background-color: #004d00;
+    color: var(--white);
     text-align: center;
-    padding: 20px 0;
+    padding: 2rem 0;
 }
 
-.footer p {
-    margin: 0;
-}
-
-/* Responsive Design */
+/* -- Responsive Design -- */
 @media (max-width: 768px) {
     .header .container {
-        flex-direction: column;
-        text-align: center;
+        flex-wrap: wrap;
+    }
+
+    .main-nav {
+        display: none;
+        width: 100%;
+        margin-top: 1rem;
     }
     
-    .header .logo {
-        margin-bottom: 10px;
+    .main-nav.active {
+        display: block;
     }
 
     .main-nav ul {
         flex-direction: column;
-        gap: 5px;
-    }
-    
-    .main-nav ul li a {
-        padding: 0.5rem;
-    }
-    
-    .hero h2 {
-        font-size: 2.5rem;
+        text-align: center;
     }
 
-    .berita-list {
-        grid-template-columns: 1fr;
+    .nav-toggle {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p.tagline {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .kontak-card p {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .kontak-card p i {
+        margin-bottom: 5px;
     }
 }
