@@ -1,0 +1,302 @@
+/* Gaya Umum */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background-color: #ffffff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo img {
+    height: 50px;
+    margin-right: 15px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #2e8b57;
+    font-weight: 700;
+}
+
+.header p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #495057;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.main-nav ul li a:hover {
+    color: #28a745;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #006400; /* Hijau Gelap */
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin: 0 0 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin: 0 0 30px;
+}
+
+.cta-button {
+    background-color: #28a745;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.cta-button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* Tentang Kami & Berita Section */
+.tentang-kami, .berita, .kontak {
+    padding: 80px 0;
+}
+
+.tentang-kami {
+    background-color: #e8f5e9;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #006400;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #2e8b57;
+    border-radius: 2px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    color: #2e8b57;
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+.berita {
+    background-color: #fff;
+}
+
+.berita-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.berita-item {
+    background-color: #f1f8e9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.berita-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.berita-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.berita-item h3 {
+    padding: 15px 20px 0;
+    color: #2e8b57;
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.berita-item p {
+    padding: 0 20px 20px;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Kontak Section */
+.kontak {
+    background-color: #006400; /* Hijau Gelap */
+    color: #fff;
+    text-align: center;
+}
+
+.kontak h2 {
+    color: #fff;
+}
+
+.kontak-info p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.kontak-info p i {
+    color: #28a745;
+    margin-right: 10px;
+    width: 25px;
+    text-align: center;
+}
+
+.sosial-media a {
+    color: #fff;
+    font-size: 2rem;
+    margin: 0 15px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.sosial-media a:hover {
+    color: #28a745;
+    transform: scale(1.1);
+}
+
+/* Footer */
+.footer {
+    background-color: #004d00; /* Hijau Lebih Gelap */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .header .logo {
+        margin-bottom: 10px;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .main-nav ul li a {
+        padding: 0.5rem;
+    }
+    
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .berita-list {
+        grid-template-columns: 1fr;
+    }
+}
